@@ -1,0 +1,93 @@
+{
+  propertyEditors:
+  [ 
+    {
+      alias: "Kraftvaerk.SimpleCodeEditor",
+      name: "Kraftvaerk.SimpleCodeEditor",
+      editor:  
+      {
+        view: "~/App_Plugins/kraftvaerk.simpleCodeEditor/views/kraftvaerk.simplecodeeditor.html"
+      },
+      prevalues: {
+        fields:[
+          {
+            label: "Choose a theme",
+            description: "Choose a theme for your editor. (Light is default)",
+            key: "theme",
+            view: "~/App_Plugins/kraftvaerk.simpleCodeEditor/views/prevalueeditors/theme-dropdown.html"
+          },
+          {
+          	label: "Display Line Numbers",
+          	description: "Should line numbers be displayed?",
+          	key: "displaylinenumbers",
+          	view: "boolean"
+          },
+          {
+            label: "Code Fence",
+            description: "If you don't want to add behaviors to an entire textarea, you may use a fence. A fence is a string, any set of characters you want to denote where behaviors should be added. The format is Fence, New Line, Code, New Line, Fence.",
+            key: "codefence",
+            view: "textstring"
+          },
+          {
+            label: "Tab Size",
+            description: "If soft tabs are enabled then the number of spaces defined here will be used. Otherwise it's controlled by CSS.",
+            key: "tabsize",
+            view: "textstring"
+          },
+          {
+          	label: "Replace Tab",
+          	description: "Do you want to enable use of the tab button?",
+          	key: "replacetab",
+          	view: "boolean"
+          },
+          {
+          	label: "Soft Tabs",
+          	description: "Do you want to use spaces instead of tab characters?",
+          	key: "softtabs",
+          	view: "boolean"
+          },
+          {
+          	label: "Auto Open",
+          	description: "Automatically writes the counterpart of a character like an opening parenthesis etc.",
+          	key: "autoopen",
+          	view: "boolean"
+          },
+          {
+          	label: "Overwrite",
+          	description: "If you type a closing character directly before an identical charcter, it will overwrite it instead of adding it. Best used with autoOpen set to true.",
+          	key: "overwrite",
+          	view: "boolean"
+          },
+          {
+          	label: "Auto Strip",
+          	description: "If enabled, and your cursor is between two paired chracters, pressing backspace will delete both instead of just the first.",
+          	key: "autostrip",
+          	view: "boolean"
+          },
+          {
+          	label: "Auto Indent",
+          	description: "If enabled, automatic indentation of your code will be attempted. Best used with autoOpen enabled.",
+          	key: "autoindent",
+          	view: "boolean"
+          }
+        ]
+      },
+      defaultConfig:{
+        theme: "light",
+        displaylinenumbers: "0",
+        replacetab: "1",
+        softtabs: "1",
+        tabsize: "4",
+        autoopen: "1",
+        overwrite: "1",
+        autostrip: "1",
+        autoindent: "1",
+        codefence: "~~~"
+      }
+    } 
+  ],
+  javascript:  
+  [
+    "~/App_Plugins/kraftvaerk.simpleCodeEditor/assets/script/kraftvaerk.simplecodeeditor.controller.js"
+  ]
+}
