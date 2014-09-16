@@ -20,7 +20,7 @@ angular.module("umbraco").controller("Kraftvaerk.SimpleCodeEditorController",
 				lines = string.split(/\r\|\r|\n/).length;
 
 				if(lines > 0){
-					var house = document.getElementsByClassName('sce-lines')[0],
+				    var house = document.getElementById($scope.model.alias + '_sce-lines'),
 						html = '',
 						i;
 					for(i=0; i<lines; i++){
@@ -48,15 +48,17 @@ angular.module("umbraco").controller("Kraftvaerk.SimpleCodeEditorController",
 				/*
 			 	* This hook adds Line Number Functionality
 			 	*/
-				BehaveHooks.add(['keydown'], function(data){
+				BehaveHooks.add(['keydown'], function (data) {
+				    if (data.editor.element.id.indexOf($scope.model.alias + "_") != 0) {
+				        return;
+				    }
 					var	numLines = data.lines.total,
-						house = document.getElementsByClassName('sce-lines')[0],
 						html = '',
 						i;
 					for(i=0; i<numLines; i++){
 						html += '<div>'+(i+1)+'</div>';
-					}
-					house.innerHTML = html;
+					}					
+					document.getElementById($scope.model.alias + '_sce-lines').innerHTML = html;
 				});
 
 			};
