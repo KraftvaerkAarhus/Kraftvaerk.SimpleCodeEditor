@@ -1,0 +1,10 @@
+<div ng-controller="Kraftvaerk.SimpleCodeEditorController" class="umb-editor umb-simplecodeeditor sce-theme-{{model.config.theme}}">
+	
+	<div class="sce-field" ng-attr-class="{{(displayLineNumbers == 0 && 'sce-field') || (displayLineNumbers == 1 && 'sce-field sce-field-lines')}}">
+		<div id="{{model.alias}}_sce-lines" class="sce-lines">
+			<span>1</span>
+		</div>
+		<textarea rows="15" id="{{model.alias}}_sce-field" ng-model="model.value"></textarea>
+	</div>
+
+</div>

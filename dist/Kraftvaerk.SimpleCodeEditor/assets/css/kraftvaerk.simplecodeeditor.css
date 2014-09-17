@@ -1,0 +1,60 @@
+.sce-field{
+	position: relative;
+	display: inline-block;
+	margin-left:0;
+	width: 68%;
+}
+
+.sce-field .sce-lines{
+	display: none;
+}
+
+.sce-field-lines{
+	width: 66.6%;
+	margin-left: 25px;
+}
+
+.sce-field-lines .sce-lines{
+	display: block;
+}
+
+.sce-field > textarea{
+	width: 97.4%;
+	height: 200px;
+	overflow: hidden;
+	line-height: 16px;
+	font-size:16px;
+	padding: 10px;
+	font-family: monospace;
+	margin: 0;
+	display: block;
+	outline:none;
+}
+
+.sce-theme-dark .sce-field > textarea{
+	background: #222324;
+	border: 0;
+	color: #cf8d24;
+}
+
+.sce-lines{
+	font-size:16px;
+	line-height:16px;
+	padding:10px 4px;
+	font-family: monospace;
+	background: #eee;
+	position: absolute;
+	width: 20px;
+	left: -27px;
+	bottom: 0;
+	top: 0;
+	text-align:center;
+	border: 1px solid #ccc;
+	border-right: 0 none;
+}
+
+.sce-theme-dark .sce-field > .sce-lines{
+	background: #1e1e1e;
+	color: #888;
+	border: 0 none;
+}
